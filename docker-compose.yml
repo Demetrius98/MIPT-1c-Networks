@@ -5,6 +5,17 @@ version: '3.7'
 services:
 
 	server:
+		build:
+      		  context: .
+      		  dockerfile: server/Dockerfile
+    		restart: always
+    		cap_add:
+      		  - NET_ADMIN
+    		networks:
+      			network:
+        		  ipv4_address: 172.20.1.0
+    		expose:
+      		  - "1-65535"
 	
 	client_1:
 	
