@@ -13,3 +13,9 @@ services:
 	client_3:
 	
 	client_4:
+
+networks:
+  network:
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
