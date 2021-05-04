@@ -18,12 +18,56 @@ services:
       		  - "1-65535"
 	
 	client_1:
+		build:
+      		  context: client
+      		  dockerfile: Dockerfile
+    		restart: always
+    		networks:
+      		   network:
+        	     ipv4_address: 172.20.1.1
+                expose:
+      		   - "1-65535"
+    		depends_on:
+      		    - server
 	
 	client_2:
+		build:
+      		  context: client
+                 dockerfile: Dockerfile
+    		restart: always
+    		networks:
+      		  network:
+        	    ipv4_address: 172.20.2.2
+                expose:
+      		   - "1-65535"
+    		depends_on:
+      		   - server
 	
 	client_3:
+		build:
+      		  context: client
+                 dockerfile: Dockerfile
+    		restart: always
+    		networks:
+      		  network:
+                    ipv4_address: 172.20.3.3
+                expose:
+      		   - "1-65535"
+    		depends_on:
+      		  - server
 	
 	client_4:
+		build:
+      		  context: client
+      		  dockerfile: Dockerfile
+    		restart: always
+    		networks:
+      		  network:
+        	  ipv4_address: 172.20.4.4
+    		expose:
+      		  - "1-65535"
+    		depends_on:
+      		  - server
 
 networks:
   network:
