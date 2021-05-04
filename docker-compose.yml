@@ -1,0 +1,15 @@
+version: '3.7'
+
+
+
+services:
+
+	server:
+	
+	client_1:
+	
+	client_2:
+	
+	client_3:
+	
+	client_4:
