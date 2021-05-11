@@ -28,7 +28,7 @@ service ssh start
 service ssh status
 
 while true; do
-    sleep 10
+    sleep 4
     iperf -c 172.20.1.1 -p 8080 -e -i 1 -t 1 &
     iperf -c 172.20.1.1 -u -p 8080 -e -i 1 -t 1 &
     iperf -c 172.20.2.2 -p 8080 -e -i 1 -t 1 &
